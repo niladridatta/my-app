@@ -1,0 +1,139 @@
+$ pwd
+/home/niladri/Workspaces
+
+$ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+$ cd my-app/
+$ pwd
+/home/niladri/Workspaces/my-app
+
+tree
+.
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- java
+    |       `-- com
+    |           `-- mycompany
+    |               `-- app
+    |                   `-- App.java
+    `-- test
+        `-- java
+            `-- com
+                `-- mycompany
+                    `-- app
+                        `-- AppTest.java
+
+
+$ mvn package 
+
+$ tree
+.
+|-- pom.xml
+|-- src
+|   |-- main
+|   |   `-- java
+|   |       `-- com
+|   |           `-- mycompany
+|   |               `-- app
+|   |                   `-- App.java
+|   `-- test
+|       `-- java
+|           `-- com
+|               `-- mycompany
+|                   `-- app
+|                       `-- AppTest.java
+`-- target
+    |-- classes
+    |   `-- com
+    |       `-- mycompany
+    |           `-- app
+    |               `-- App.class
+    |-- maven-archiver
+    |   `-- pom.properties
+    |-- my-app-1.0-SNAPSHOT.jar
+    |-- surefire
+    |-- surefire-reports
+    |   |-- com.mycompany.app.AppTest.txt
+    |   `-- TEST-com.mycompany.app.AppTest.xml
+    `-- test-classes
+        `-- com
+            `-- mycompany
+                `-- app
+                    `-- AppTest.class
+
+
+$ java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+Hello World!
+
+$ mvn site
+
+$ tree
+.
+|-- pom.xml
+|-- src
+|   |-- main
+|   |   `-- java
+|   |       `-- com
+|   |           `-- mycompany
+|   |               `-- app
+|   |                   `-- App.java
+|   `-- test
+|       `-- java
+|           `-- com
+|               `-- mycompany
+|                   `-- app
+|                       `-- AppTest.java
+`-- target
+    |-- classes
+    |   `-- com
+    |       `-- mycompany
+    |           `-- app
+    |               `-- App.class
+    |-- maven-archiver
+    |   `-- pom.properties
+    |-- my-app-1.0-SNAPSHOT.jar
+    |-- site
+    |   |-- css
+    |   |   |-- maven-base.css
+    |   |   |-- maven-theme.css
+    |   |   |-- print.css
+    |   |   `-- site.css
+    |   |-- dependencies.html
+    |   |-- dependency-convergence.html
+    |   |-- dependency-info.html
+    |   |-- images
+    |   |   |-- close.gif
+    |   |   |-- collapsed.gif
+    |   |   |-- expanded.gif
+    |   |   |-- external.png
+    |   |   |-- icon_error_sml.gif
+    |   |   |-- icon_info_sml.gif
+    |   |   |-- icon_success_sml.gif
+    |   |   |-- icon_warning_sml.gif
+    |   |   |-- logos
+    |   |   |   |-- build-by-maven-black.png
+    |   |   |   |-- build-by-maven-white.png
+    |   |   |   `-- maven-feather.png
+    |   |   `-- newwindow.png
+    |   |-- index.html
+    |   |-- plugin-management.html
+    |   |-- plugins.html
+    |   |-- project-info.html
+    |   `-- project-summary.html
+    |-- surefire
+    |-- surefire-reports
+    |   |-- com.mycompany.app.AppTest.txt
+    |   `-- TEST-com.mycompany.app.AppTest.xml
+    `-- test-classes
+        `-- com
+            `-- mycompany
+                `-- app
+                    `-- AppTest.class
+
+
+Accessing site
+=================
+
+From Browser:
+file:///home/niladri/Workspaces/my-app/target/site/index.html
